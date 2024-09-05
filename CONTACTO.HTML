@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Astrians</title>
+    <link href="home.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .left-button img {
+            width: 80px;
+            height: auto;
+            display: block;
+        }
+
+        .right-buttons {
+            display: flex;
+            gap: 1cm;
+        }
+
+        .right-buttons a {
+            text-decoration: none;
+        }
+
+        .right-buttons button {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            color: black;
+        }
+
+        .contact {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 80px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .contact-info, .contact-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label {
+            margin-bottom: 5px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .right-buttons {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 0;
+            }
+
+            .contact {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#topo" class="left-button">
+            <img src="logoastrians.png" alt="Logo Astrians">
+        </a>
+        <div class="right-buttons">
+            <a href="home.html"><button>Início</button></a>
+            <a href="sobre.html"><button>Sobre Nós</button></a>
+            <a href="services.html"><button>Serviços</button></a>
+            <a href="CONTACTO.HTML"><button>Contato</button></a>
+        </div>
+    </header>
+
+    <div class="contact">
+        <h2>Entre em Contato</h2>
+
+        <div class="contact-info">
+            <h3>Informações de Contato</h3>
+            <p><strong>Telefone:</strong> (+351) 961 493 648</p>
+            <p><strong>Email:</strong> ASTRIANS.servicos@gmail.com</p>
+            <p><strong>Endereço:</strong> Rua Exemplo, 123, Lisboa, Portugal</p>
+        </div>
+
+        <div class="contact-form">
+            <form>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+    
+        window.addEventListener('scroll', () => {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (currentScroll > lastScrollTop) {
+                // Rolando para baixo
+                header.classList.add('header-hidden');
+            } else {
+                // Rolando para cima
+                header.classList.remove('header-hidden');
+            }
+            
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para evitar valores negativos
+        });
+    </script>
+    
+    <footer>
+        <p>&copy; 2024 Astrians. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

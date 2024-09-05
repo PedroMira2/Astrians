@@ -1,0 +1,194 @@
+/* Estilo geral do corpo e html */
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #494343ef;
+    color: #333;
+    box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
+}
+
+/* Estilo do header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+    transition: transform 0.3s ease-in-out;
+}
+
+.header-hidden {
+    transform: translateY(-100%);
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1cm;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+nav a.active {
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+/* Estilo da hero section */
+.hero {
+    height: 100vh;
+    background-image: url('https://th.bing.com/th/id/R.48bc466a55beb5de882b7394e51eac9f?rik=o3mhrzONTNcHDQ&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2ff%2f3%2f3%2f765105-technology-background-images-1920x1080-free-download.jpg&ehk=SwYys%2begJ1%2byiVGUZ6OxL6Z%2b1MwxDalFHdzRvepbeJM%3d&risl=&pid=ImgRaw&r=0');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin: 0;
+    color: black; /* Cor do texto do título da hero section */
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: black; /* Cor do texto do parágrafo da hero section */
+}
+
+/* Estilo das seções */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about-section {
+    background-color: #ffffff;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: black; /* Cor do título da seção Sobre Nós */
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Estilo da seção da equipe */
+.team-section {
+    background-color: #f8f9fa;
+    padding: 60px 20px;
+}
+
+.team-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: black; /* Cor do título da seção da equipe */
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+}
+
+.team-card img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.team-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.team-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Estilo do footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin: 0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .right-buttons {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .team-card {
+        width: 90%;
+    }
+}

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrians - Serviços Tecnológicos</title>
+    <link href="home.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #494343ef;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .header-hidden {
+            transform: translateY(-100%);
+        }
+
+        .left-button img {
+            width: 80px;
+            height: auto;
+            display: block;
+            background: none;
+        }
+
+        .right-buttons {
+            display: flex;
+            gap: 1cm;
+            padding: 0 20px;
+        }
+
+        .right-buttons a {
+            text-decoration: none;
+        }
+
+        .right-buttons button {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            color: black;
+        }
+
+        .hero {
+            height: 100vh;
+            background-image: url('https://th.bing.com/th/id/R.48bc466a55beb5de882b7394e51eac9f?rik=o3mhrzONTNcHDQ&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2ff%2f3%2f3%2f765105-technology-background-images-1920x1080-free-download.jpg&ehk=SwYys%2begJ1%2byiVGUZ6OxL6Z%2b1MwxDalFHdzRvepbeJM%3d&risl=&pid=ImgRaw&r=0');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            color: black;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: black;
+        }
+
+        .hero button {
+            background-color: #007bff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: #0056b3;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .about {
+            background-color: #ffffff;
+        }
+
+        .about img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .services {
+            background-color: #e9ecef;
+        }
+
+        .services h2 {
+            margin-bottom: 40px;
+        }
+
+        .services .service-item {
+            display: inline-block;
+            width: 300px;
+            margin: 10px;
+            text-align: left;
+        }
+
+        .services img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .contact {
+            background-color: #ffffff;
+            display: flex;
+            flex-wrap: wrap; /* Permite que os itens quebrem linha */
+            justify-content: space-between;
+            padding: 60px 20px;
+            gap: 20px;
+        }
+
+        .contact form {
+            flex: 1;
+            max-width: 600px;
+            width: 100%;
+            text-align: left;
+            padding-left: 20px; /* Adiciona um padding à esquerda */
+        }
+
+        .contact form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact form input, .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact form button {
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact form button:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-info {
+            flex: 1;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .right-buttons {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .services .service-item {
+                width: 100%;
+                margin: 20px 0;
+            }
+
+            .contact {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 10px; /* Reduz o padding em dispositivos móveis */
+            }
+
+            .contact-info {
+                max-width: 100%; /* Remove a largura máxima para dispositivos móveis */
+                margin-top: 20px;
+            }
+
+            .contact form {
+                width: 100%; /* Garante que o formulário ocupe toda a largura disponível */
+                padding-left: 0; /* Remove padding adicional em dispositivos móveis */
+            }
+        }
+    </style>
+</head>
+<body id="topo">
+
+    <header>
+        <a href="#topo">
+            <button class="left-button">
+                <img src="logoastrians.png" alt="Astrians Logo">
+            </button>
+        </a>
+
+        <div class="right-buttons">
+            <a href="#topo"><button>HOME</button></a>
+            <a href="holies.html"><button>SERVIÇOS
+                
+            </button></a>
+            <a href="#hoome"><button>CONTATO</button></a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div>
+            <h1>Bem-vindo à Astrians</h1>
+            <p>Soluções Tecnológicas para o Futuro</p>
+            <button onclick="window.location.href='/contato'">Entre em Contato</button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about" id="holaa">
+        <h2>Sobre Nós</h2>
+        <p>Somos uma empresa líder em serviços tecnológicos, dedicada a oferecer as melhores soluções para nossos clientes. Nossa equipe é formada por especialistas em diversas áreas da tecnologia, prontos para transformar seus desafios em oportunidades.</p>
+       
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="amoo">
+        <h2>Nossos Serviços</h2>
+        <div class="service-item">
+            <img src="OIG3.jpg" alt="Serviço 1">
+            <h3>Consultoria em TI</h3>
+            <p>Oferecemos consultoria especializada para otimizar a infraestrutura tecnológica de sua empresa.</p>
+        </div>
+        <div class="service-item">
+            <img src="OIG5.jpg" alt="Serviço 2">
+            <h3>Desenvolvimento de Software</h3>
+            <p>Desenvolvemos soluções de software sob medida para atender às necessidades do seu negócio.</p>
+        </div>
+        <div class="service-item">
+            <img src="OIG2.jpg" alt="Serviço 3">
+            <h3>Segurança da Informação</h3>
+            <p>Proteja seus dados e informações com nossas soluções avançadas de segurança digital.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="hoome">
+        <div class="contact-info">
+            <h3>Informações de Contato</h3>
+            <p><strong>Telefone:</strong> (+351) 961 493 648</p>
+            <p><strong>Email:</strong> ASTRIANS.servicos@gmail.com</p>
+            <p><strong>Endereço:</strong> Rua Exemplo, 123, Lisboa, Portugal</p>
+        </div>
+
+        <form>
+            <h3>Entre em Contato</h3>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Astrians. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop) {
+                // Rolando para baixo, esconde o header
+                header.classList.add('header-hidden');
+            } else {
+                // Rolando para cima, mostra o header
+                header.classList.remove('header-hidden');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    </script>
+
+</body>
+</html>
