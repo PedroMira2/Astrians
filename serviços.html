@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - Astrians</title>
+    <link rel="stylesheet" href="serviços.css">
+    <style>
+        /* Estilos do Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .left-button img {
+            width: 80px;
+            height: auto;
+        }
+
+        .right-buttons {
+            display: flex;
+            gap: 1cm;
+        }
+
+        .right-buttons a {
+            text-decoration: none;
+        }
+
+        .right-buttons button {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            color: black;
+        }
+
+        /* Estilos da Página de Serviços */
+        .container {
+            margin-top: 80px; /* Espaço para o header fixo */
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            flex: 1; /* Faz com que o conteúdo ocupe todo o espaço disponível, empurrando o rodapé para o final */
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .service-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .service-item p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Estilos do Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .right-buttons {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#topo" class="left-button">
+            <img src="logoastrians.png" alt="Logo Astrians">
+        </a>
+        <div class="right-buttons">
+            <a href="home.html"><button>Início</button></a>
+            <a href="sobre.html"><button>Sobre Nós</button></a>
+            <a href="serviços.html"><button>Serviços</button></a>
+            <a href="CONTACTO.HTML"><button>Contato</button></a>
+        </div>
+    </header>
+
+    <main>
+        <section id="servicos">
+            <div class="container"><BR>
+                <br>
+                <br>
+                <h1>Nossos Serviços</h1>
+                <p>Oferecemos uma ampla gama de serviços tecnológicos projetados para impulsionar o sucesso do seu negócio. Nossos especialistas trabalham com as tecnologias mais recentes para entregar soluções personalizadas e inovadoras.</p>
+
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h2>Desenvolvimento de Software</h2>
+                        <p>Criamos soluções de software sob medida para atender às necessidades específicas da sua empresa, seja para otimização de processos internos ou para atender seus clientes de forma mais eficiente.</p>
+                    </div>
+
+                    <div class="service-item">
+                        <h2>Consultoria em TI</h2>
+                        <p>Nossos consultores especializados ajudam sua empresa a adotar as melhores práticas e tecnologias, otimizando seus recursos e aumentando a produtividade.</p>
+                    </div>
+
+                    <div class="service-item">
+                        <h2>Gerenciamento de Infraestrutura</h2>
+                        <p>Fornecemos serviços completos de gerenciamento de infraestrutura de TI, garantindo que seus sistemas sejam confiáveis, seguros e eficientes.</p>
+                    </div>
+
+                    <div class="service-item">
+                        <h2>Segurança da Informação</h2>
+                        <p>Proteja seus dados e informações críticas com nossas soluções de segurança cibernética, incluindo monitoramento, prevenção de ameaças e políticas de conformidade.</p>
+                    </div>
+
+                    <div class="service-item">
+                        <h2>Cloud Computing</h2>
+                        <p>Aproveite o poder da computação em nuvem para aumentar a flexibilidade, reduzir custos e melhorar a escalabilidade dos seus serviços e operações.</p>
+                    </div>
+
+                    <div class="service-item">
+                        <h2>Suporte Técnico</h2>
+                        <p>Nosso suporte técnico está disponível 24/7 para resolver rapidamente quaisquer problemas que possam surgir e manter sua operação funcionando sem interrupções.</p>
+                    </div>
+
+                    <div class="service-item">
+                        <h2>Integração de Sistemas</h2>
+                        <p>Conectamos diferentes sistemas de TI dentro da sua empresa, garantindo que todas as ferramentas e plataformas funcionem em harmonia e maximizem sua eficiência operacional.</p>
+                    </div>
+
+                    <div class="service-item">
+                        <h2>Desenvolvimento Mobile</h2>
+                        <p>Desenvolvemos aplicativos móveis inovadores e funcionais que ajudam a melhorar a experiência do usuário e aumentar a eficiência do seu negócio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Astrians. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
