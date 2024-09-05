@@ -192,3 +192,6 @@ footer {
         width: 90%;
     }
 }
+.header-hidden {
+    transform: translateY(-100%);
+}
