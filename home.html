@@ -277,6 +277,23 @@
             background-color: #0056b3;
         }
 
+        .terms-button {
+            background-color: transparent;
+            color: #007bff;
+            border: 2px solid #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .terms-button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
         @media (max-width: 768px) {
             .right-buttons {
                 flex-direction: column;
@@ -326,10 +343,10 @@
             <img src="logoastrians.png" alt="Logo Astrians">
         </a>
         <div class="right-buttons">
-            <a href="home.html"><button>Início</button></a>
+            <a href="index.html"><button>Home</button></a>
             <a href="sobre.html"><button>Sobre Nós</button></a>
             <a href="serviços.html"><button>Serviços</button></a>
-            <a href="CONTACTO.HTML"><button>Contato</button></a>
+            <a href="contato.html"><button>Contato</button></a>
         </div>
     </header>
 
@@ -390,6 +407,7 @@
 
     <footer>
         <p>&copy; 2024 Astrians. Todos os direitos reservados.</p>
+        <button class="terms-button" onclick="showTerms()">Termos de Uso</button>
     </footer>
 
     <div id="license-modal">
@@ -399,6 +417,7 @@
             <div id="license-buttons">
                 <button id="accept-btn">Aceitar</button>
                 <button id="decline-btn">Recusar</button>
+                <button id="terms-btn">Termos de Uso</button> <!-- Novo botão -->
             </div>
         </div>
     </div>
@@ -425,6 +444,7 @@
         const licenseModal = document.getElementById('license-modal');
         const acceptBtn = document.getElementById('accept-btn');
         const declineBtn = document.getElementById('decline-btn');
+        const termsBtn = document.getElementById('terms-btn');
 
         // Mostrar o modal ao carregar a página
         window.onload = () => {
@@ -440,6 +460,16 @@
         declineBtn.onclick = () => {
             window.location.href = 'paginaerro.html'; // Redireciona para a página de erro
         };
+
+        // Exibir termos de uso
+        termsBtn.onclick = () => {
+            window.open('LICENSE.md', '_blank'); // Abre o LICENSE.md em uma nova aba
+        };
+
+        // Função para mostrar os termos de uso no footer
+        function showTerms() {
+            window.open('LICENSE.md', '_blank'); // Abre o LICENSE.md em uma nova aba
+        }
     </script>
 </body>
 </html>
