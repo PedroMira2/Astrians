@@ -230,6 +230,53 @@
             margin: 0;
         }
 
+        /* Estilos do Modal */
+        #license-modal {
+            display: none; /* Inicialmente escondido */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #license-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        #license-content h2 {
+            margin-top: 0;
+        }
+
+        #license-buttons {
+            margin-top: 20px;
+        }
+
+        #license-buttons button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            font-size: 1rem;
+        }
+
+        #license-buttons button:hover {
+            background-color: #0056b3;
+        }
+
         @media (max-width: 768px) {
             .right-buttons {
                 flex-direction: column;
@@ -339,37 +386,60 @@
 
             <button type="submit">Enviar</button>
         </form>
-
-
-        <script>
-            let lastScrollTop = 0;
-            const header = document.querySelector('header');
-        
-            window.addEventListener('scroll', () => {
-                let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-                
-                if (currentScroll > lastScrollTop) {
-                    // Rolando para baixo
-                    header.classList.add('header-hidden');
-                } else {
-                    // Rolando para cima
-                    header.classList.remove('header-hidden');
-                }
-                
-                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para evitar valores negativos
-            });
-        </script>
-        
-
-
-
-
-    
     </section>
 
     <footer>
         <p>&copy; 2024 Astrians. Todos os direitos reservados.</p>
     </footer>
 
+    <div id="license-modal">
+        <div id="license-content">
+            <h2>Licença de Uso</h2>
+            <p>Este site e seu conteúdo são protegidos por direitos autorais. A cópia, reprodução ou redistribuição não autorizada é proibida. Ao continuar, você concorda com os termos de uso.</p>
+            <div id="license-buttons">
+                <button id="accept-btn">Aceitar</button>
+                <button id="decline-btn">Recusar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                // Rolando para baixo
+                header.classList.add('header-hidden');
+            } else {
+                // Rolando para cima
+                header.classList.remove('header-hidden');
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para evitar valores negativos
+        });
+
+        // Função para lidar com o modal
+        const licenseModal = document.getElementById('license-modal');
+        const acceptBtn = document.getElementById('accept-btn');
+        const declineBtn = document.getElementById('decline-btn');
+
+        // Mostrar o modal ao carregar a página
+        window.onload = () => {
+            licenseModal.style.display = 'flex';
+        };
+
+        // Aceitar termos
+        acceptBtn.onclick = () => {
+            licenseModal.style.display = 'none';
+        };
+
+        // Recusar termos
+        declineBtn.onclick = () => {
+            window.location.href = 'paginaerro.html'; // Redireciona para a página de erro
+        };
+    </script>
 </body>
 </html>
